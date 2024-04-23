@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup/Login with BMI</title>
+</head>
+<body>
+    <h2>Signup</h2>
+    <form action="signup.php" method="post" enctype="multipart/form-data">
+        Name: <input type="text" name="name" required><br>
+        Age: <input type="number" name="age" required><br>
+        Height (cm): <input type="number" name="height" required><br>
+        Weight (kg): <input type="number" name="weight" required><br>
+        Username: <input type="text" name="username" required><br>
+        Password: <input type="password" name="password" required><br>
+        Photo: <input type="file" name="photo" accept="image/*"><br> <!-- Photo upload input -->
+        <input type="submit" value="Signup">
+    </form>
+
+    <h2>Login</h2>
+    <form action="login.php" method="post">
+        Username: <input type="text" name="username" required><br>
+        Password: <input type="password" name="password" required><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
+

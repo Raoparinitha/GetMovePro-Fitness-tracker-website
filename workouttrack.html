@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('workoutbg.jpg'); /* Replace 'your-background-image.jpg' with the actual image file path */
+            background-size: center;
+            background-position: center center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 20px;
+            color:rgb(239, 69, 239);
+        }
+        main {
+            flex: 1; /* Allow the main content to grow and fill the available space */
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color:whitesmoke;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color:whitesmoke;
+        }
+
+        /* Style for health benefits */
+        .health-benefits {
+            margin-top: 10px;
+            font-style: italic;
+            color: #555;
+        }
+        footer {
+            
+            /* Choose a background color for the footer */
+               color: #fff; /* Text color */
+               padding: 20px; /* Adjust the padding as needed */
+               text-align: center;
+               margin-top: auto;
+           }
+           
+           .footer-content {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+           }
+           
+           .social-icons {
+               display: flex;
+           }
+           
+           .social-icons a {
+               margin-right: 10px; /* Adjust the spacing between icons */
+           }
+           
+           .social-icons img {
+               width: 30px; /* Adjust the size of the icons */
+               height: auto;
+           }
+           
+           /* Style the copyright text */
+           footer p {
+               
+               margin-top: 10px;
+           }
+    </style>
+</head>
+<body>
+
+    <h1 style="font-size: 50px;">Workout Tracker</h1>
+
+    <form id="workoutForm">
+        <label for="exerciseType">Exercise Type:</label>
+        <select id="exerciseType" name="exerciseType" required>
+            <option value="Walking">Walking</option>
+            <option value="Swimming">Swimming</option>
+            <option value="Running">Running</option>
+            <option value="Jogging">Jogging</option>
+            <option value="Cycling">Cycling</option>
+        </select>
+
+        <label for="duration">Duration (minutes):</label>
+        <input type="number" id="duration" name="duration" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="button" onclick="addWorkout()">Add Workout</button>
+    </form>
+
+    <h2>Workout History</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Exercise Type</th>
+                <th>Duration (minutes)</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="workoutTableBody">
+            <!-- Workout entries will be added here -->
+        </tbody>
+    </table>
+    <main>
+        <!-- Your main content goes here -->
+    </main>
+
+    <div id="healthBenefits" class="health-benefits"></div>
+
+    <script>
+       function showActivity(activity) {
+            var imageElement = document.getElementById('exercise-image');
+            var benefitsElement = document.getElementById('health-benefits');
+            var youtubeLinkElement = document.getElementById('youtube-link');
+
+            // Update the image source based on the activity
+            switch (activity) {
+                case 'Walking':
+                    imageElement.src = 'walking.gif';
+                    benefitsElement.innerHTML = getHealthBenefits(activity);
+                    youtubeLinkElement.href = '';
+                    break;
+                case 'Swimming':
+                    imageElement.src = 'swimming.gif';
+                    benefitsElement.innerHTML = getHealthBenefits(activity);
+                    youtubeLinkElement.href = 'https://www.youtube.com/watch?v=your-swimming-tips-video-id';
+                    break;
+                case 'Running':
+                    imageElement.src = 'running.gif';
+                    benefitsElement.innerHTML = getHealthBenefits(activity);
+                    youtubeLinkElement.href = 'https://youtu.be/kVnyY17VS9Y';
+                    break;
+                case 'Jogging':
+                    imageElement.src = 'jogging.jpg';
+                    benefitsElement.innerHTML = getHealthBenefits(activity);
+                    youtubeLinkElement.href = 'https://www.youtube.com/watch?v=your-jogging-tips-video-id';
+                    break;
+                case 'Cycling':
+                    imageElement.src = 'cycling.gif';
+                    benefitsElement.innerHTML = getHealthBenefits(activity);
+                    youtubeLinkElement.href = 'https://www.youtube.com/watch?v=your-cycling-tips-video-id';
+                    break;
+                default:
+                    // If the activity is not recognized, clear the content
+                    imageElement.src = '';
+                    benefitsElement.innerHTML = '';
+                    youtubeLinkElement.href = '#';
+                    break;
+            }
+        }
+
+        function getHealthBenefits(exerciseType) {
+            switch (exerciseType) {
+                case 'Walking':
+                    return '<ul>' +
+                        '<li>Increased cardiovascular and pulmonary (heart and lung) fitness</li>' +
+                        '<li>Reduced risk of heart disease and stroke</li>' +
+                        '<li>Improved management of conditions such as hypertension (high blood pressure), high cholesterol, joint and muscular pain or stiffness, and diabetes</li>' +
+                        '<li>Stronger bones and improved balance</li>' +
+                        '<li>Increased muscle strength and endurance</li>' +
+                        '<li>Reduced body fat</li>' +
+                        '</ul>';
+                case 'Swimming':
+                    return '<ul>' +
+                        '<li>Excellent full-body workout</li>' +
+                        '<li>Improves cardiovascular health</li>' +
+                        '<li>Builds muscle strength and endurance</li>' +
+                        '<li>Helps maintain a healthy weight</li>' +
+                        '<li>Low-impact exercise with less stress on joints</li>' +
+                        '</ul>';
+                case 'Running':
+                    return '<ul>' +
+                        '<li>Improves cardiovascular health</li>' +
+                        '<li>Boosts mood and reduces stress</li>' +
+                        '<li>Burns calories and aids in weight management</li>' +
+                        '<li>Strengthens muscles and bones</li>' +
+                        '<li>Enhances lung capacity and respiratory function</li>' +
+                        '</ul>';
+                case 'Jogging':
+                    return '<ul>' +
+                        '<li>Similar benefits to running but with lower impact</li>' +
+                        '<li>Improves cardiovascular health</li>' +
+                        '<li>Helps in weight management</li>' +
+                        '<li>Strengthens muscles and bones</li>' +
+                        '<li>Enhances lung capacity and respiratory function</li>' +
+                        '</ul>';
+                case 'Cycling':
+                    return '<ul>' +
+                        '<li>Improves cardiovascular health</li>' +
+                        '<li>Builds muscle strength and tone, especially in the lower body</li>' +
+                        '<li>Low-impact exercise with less stress on joints</li>' +
+                        '<li>Boosts mood and reduces stress</li>' +
+                        '<li>Enhances lung capacity and respiratory function</li>' +
+                        '</ul>';
+                default:
+                    return '';
+            }
+        }
+        
+        
+    </script>
+    <footer>
+        <div class="social-icons">
+            <!-- Replace the "#" with your actual social media links -->
+            <a href="#" target="_blank"><img src="linkedin-icon.jpg" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="x-icon.jpg" alt="Twitter"></a>
+            <a href="#" target="_blank"><img src="instagram-icon.jpg" alt="Instagram"></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+    
+        <div class="footer-content">
+            <h3>GetMovePro</h3>
+            <p>&copy; 2024 GetMovePro. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

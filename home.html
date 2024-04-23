@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Fitness Partner</title>
+
+    <style>
+       
+            body
+            {
+                background-color:whitesmoke
+            }
+            .navbar a
+    {
+        float: left;
+        display: block;
+        padding: 14px 16px;
+    }
+    body {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+            font-size: 50px;
+            text-align: center;
+            display: block;
+            margin: 20px auto; /* Center the heading */
+        }
+        pre {
+            font-size: 25px;
+            text-align: center;
+            margin: 0 auto; /* Center the text */
+        }
+
+
+h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    color:white;
+}
+.navbar a.register,
+        .navbar a.nutrition {
+            color: white; /* Set color to white for Register and Nutrition links */
+        }
+
+nav li {
+    display: inline-block;
+    margin-right: 20px; 
+    color:#fff;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff; 
+    font-weight: bold;
+}
+
+header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(181deg, rgb(2, 0, 97) 15%, rgb(97, 149, 219) 158.5%);
+            color: #fff;
+            padding: 20px;
+        }
+    .logo {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 8px;
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+        }
+    .navbar{
+    overflow: hidden;
+    border-style: light;
+    color:#fff;
+    font-size: 18px;
+    }
+.ordered
+{
+ float:right;
+ width:50%;
+}
+.unordered
+{
+ float:left;
+ width:50%;
+}
+footer {
+    background: linear-gradient(181deg, rgb(2, 0, 97) 15%, rgb(97, 149, 219) 158.5%);
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            
+        }
+        .social-icons img {
+            width: 30px; /* Adjust the size of the icons */
+            height: auto;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .copyright {
+            font-size: 18px;
+        }
+        .navbar{
+            text-align:center;
+            color:white;
+
+            .navbar a {
+    text-decoration: none;
+    color: #fff; /* Set color to white */
+    font-weight: bold;
+    margin: 0 20px;
+}
+        }
+        .navbar {
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white; /* Set color to white */
+            font-weight: bold;
+            margin: 0 20px;
+        }
+    </style>
+
+    <script>
+        function typeEffect(element, speed) {
+            const text = element.innerHTML;
+            element.innerHTML = '';
+
+            let i = 0;
+            const typing = setInterval(() => {
+                element.innerHTML += text.charAt(i);
+                i++;
+                if (i > text.length) {
+                    clearInterval(typing);
+                }
+            }, speed);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const heading = document.querySelector('h2');
+            const paragraphs = document.querySelectorAll('p');
+            const learnMoreButton = document.querySelector('button');
+
+            setTimeout(() => {
+                typeEffect(heading, 50);
+            }, 500);
+
+            setTimeout(() => {
+                paragraphs.forEach((p, index) => {
+                    setTimeout(() => {
+                        typeEffect(p, 30);
+                    }, index * 1000); // Adjust the delay between paragraphs
+                });
+            }, 1500);
+
+            setTimeout(() => {
+                learnMoreButton.style.opacity = 1;
+            }, paragraphs.length * 1000 + 2000); // Adjust the delay for the button
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <img src="Get MovePro.png" alt="Your Logo" class="logo">
+        <div class="navbar">
+            <a href="log.html">Login</a>
+            <a href="nutrition main.html">Nutrition</a>
+            <a href="workoutplan.html">Workout Tracker</a>
+            <a href="mentalhealth.html">Mental Health</a>
+        </div>
+    </header>
+
+    <h2 style="font-size:50px;display:block;">You should never stay at the same level!</h2>
+    <img src="home.jpg" style="display: block; margin: 0 auto; max-width: 500px;">
+<br>
+<pre style="font-size: 25px;font-family: 'Poppins';">When I feel tired, I just think about how great I will feel once I finally reach my goal.
+
+You have to think about it before you can do it.
+
+Don't be afraid of failure.The only bad workout is the one that didn't happen!!</pre>
+
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <div class="social-icons">
+            <!-- Replace the "#" with your actual social media links -->
+            <a href="#" target="_blank"><img src="linkedin-icon.jpg" alt="LinkedIn"></a>
+            <a href="#" target="_blank"><img src="x-icon.jpg" alt="Twitter"></a>
+            <a href="#" target="_blank"><img src="instagram-icon.jpg" alt="Instagram"></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+
+        <p class="copyright">&copy; 2024 GetMovePro. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
+
+
+

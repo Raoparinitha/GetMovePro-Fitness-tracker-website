@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calorie Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    #calculator-container {
+      text-align:center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    h2 {
+      margin-top: 20px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at 10% 20%, rgb(50, 172, 109) 0%, rgb(209, 251, 155) 100.2%);
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+  </style>
+</head>
+<body>
+    <header>
+       
+        <nav>
+            <h1 style="text-align: center;font-size:35px;">NutriHub: Your Comprehensive Guide to Optimal Nutrition</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Nutrition</a></li>
+                <li><a href="index.html">Workout Tracker</a></li>
+                <li><a href="index.html">Mental health</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <h2>Unlocking the Power of Nutrition for Optimal Physical Health</h2>
+        <p style="font-size: 21px;">Nutrition is the cornerstone of a healthy and vibrant life, acting as the fuel that propels our bodies towards peak performance. It encompasses the intake of essential nutrients, vitamins, and minerals that our body requires for proper functioning and overall well-being.
+
+            At its core, nutrition is not just about restricting calories or adhering to fad diets; it's a holistic approach to nourishing our bodies with the right balance of macronutrients (proteins, fats, and carbohydrates) and micronutrients (vitamins and minerals). This delicate balance plays a pivotal role in supporting bodily functions, from energy production to immune system strength.</p>
+            <br>
+            
+
+  <div id="calculator-container">
+    <h1>Calorie Calculator</h1>
+
+    <label for="meal-option">Select Meal:</label>
+    <select id="meal-option">
+      <option value="breakfast">Breakfast</option>
+      <option value="lunch">Lunch</option>
+      <option value="dinner">Dinner</option>
+      <option value="snacks">Snacks</option>
+    </select>
+
+    <label for="food-option">Select Food:</label>
+    <select id="food-option">
+      <option value="idli">Idli</option>
+      <option value="chicken">Chicken</option>
+      <option value="apple">Apple</option>
+      <option value="Small guava">Small guava</option>
+      <option value="Small orange">Small orange</option>
+      <option value="Bread">Bread</option>
+      <option value="Small poori">Small poori</option>
+      <option value="Roti">Roti</option>
+      <option value="Parantha">Parantha</option>
+      <option value="Pav">Pav</option>
+      <option value="Naan">Naan</option>
+      <option value="Butter Naan">Butter Naan</option>
+      <option value="Green tea">Green tea</option>
+      <option value="Milk Tea">Milk Tea</option>
+      <option value="Cappuccino">Cappucino</option>
+      <option value="Alcohol">Alcohol</option>
+      <option value="Soda">Soda</option>
+      
+
+      
+      
+      <!-- Add more food options as needed -->
+    </select>
+
+    <label for="quantity">Quantity (grams):</label>
+    <input type="number" id="quantity" placeholder="Enter quantity in grams">
+
+    <button onclick="calculateCalories()">Calculate Total Calories</button>
+
+    <h2>Calories for Each Food:</h2>
+    <ul id="calories-output"></ul>
+
+    <h2>Total Calories Consumed:</h2>
+    <p id="total-calories">0</p>
+  </div>
+
+  <script>
+    let totalCalories = 0;
+
+    function calculateCalories() {
+      const mealOption = document.getElementById('meal-option').value;
+      const foodOption = document.getElementById('food-option').value;
+      const quantity = parseFloat(document.getElementById('quantity').value) || 0;
+
+      const caloriesOutput = document.getElementById('calories-output');
+      const totalCaloriesElement = document.getElementById('total-calories');
+
+      let caloriesPer100g;
+
+      // Calculate calories per 100g based on the food option
+      switch (foodOption) {
+        case 'idli':
+          caloriesPer100g = 26; // Sample value for idli
+          break;
+        case 'chicken':
+          caloriesPer100g = 165; // Sample value for chicken
+          break;
+        case 'apple':
+          caloriesPer100g = 52; // Sample value for apple
+          break;
+          case 'Small guava':
+          caloriesPer100g = 32; // Sample value for apple
+          break;
+          case 'Small orange':
+          caloriesPer100g = 37; // Sample value for apple
+          break;
+          case 'Bread':
+          caloriesPer100g = 45; // Sample value for apple
+          break;
+          case 'Small poori':
+          caloriesPer100g = 75; // Sample value for apple
+          break;
+          case 'Roti':
+          caloriesPer100g = 100; // Sample value for apple
+          break;
+          case 'Parantha':
+          caloriesPer100g = 150; // Sample value for apple
+          break;
+          case 'Pav':
+          caloriesPer100g = 180; // Sample value for apple
+          break;
+          case 'Naan':
+          caloriesPer100g = 262; // Sample value for apple
+          break;
+          case 'Butter Naan':
+          caloriesPer100g = 310; // Sample value for apple
+          break;
+          case 'Green tea':
+          caloriesPer100g = 10; // Sample value for apple
+          break;
+          case 'Milk Tea ':
+          caloriesPer100g = 45; // Sample value for apple
+          break;
+          case 'Cappuccino':
+          caloriesPer100g = 45; // Sample value for apple
+          break;
+          case 'Alcohol':
+          caloriesPer100g = 75; // Sample value for apple
+          break;
+          case 'Soda':
+          caloriesPer100g = 10; // Sample value for apple
+          break;
+        // Add more cases for other food options
+        default:
+          caloriesPer100g = 0; // Default value if not recognized
+      }
+
+      const caloriesForFood = (caloriesPer100g * quantity) / 100;
+      totalCalories += caloriesForFood;
+
+      const listItem = document.createElement('li');
+      listItem.textContent = `${mealOption} - ${foodOption}: ${caloriesForFood.toFixed(2)} calories`;
+      caloriesOutput.appendChild(listItem);
+
+      totalCaloriesElement.textContent = `Total Calories Consumed: ${totalCalories.toFixed(2)} calories`;
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+

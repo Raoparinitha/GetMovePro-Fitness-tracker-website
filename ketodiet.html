@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keto Diet Library</title>
+    <style>
+      html, body {
+            font-family:'Pappins';
+            margin: 0;
+            padding: 0;
+            /* Replace 'your-background-image.jpg' with the actual image file path */
+            background-size: center; /* Adjust the value to 'contain', '100% auto', etc. based on your preference */
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff; /* Change text color for better readability */
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            height: 100vh;
+            min-height: 100vh;
+             /* Ensure the body takes the full height of the viewport */
+            opacity: 0; /* Set initial opacity to 0 to hide the content */
+            animation: fadeIn 1.5s ease-out forwards; /* Ensure the body takes the full height of the viewport */
+            background: url('keto.jpg')  center center/contain no-repeat;
+            margin: 0; /* Remove default margin to cover the entire viewport */
+            padding: 0; /* Remove default padding */
+        }
+        header {
+    position: fixed;
+    width: 100%;
+    padding: 25px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #5078f2;
+            background-image: linear-gradient(315deg, #5078f2 0%, #efe9f4 74%);
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+       
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .blog {
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Ensure images within the blog won't exceed the blog container */
+        }
+
+        .blog img {
+            width: 100%; /* Make sure the image takes up the full width of the blog container */
+            height: auto;
+            max-width: 300px; /* Maintain the image's aspect ratio */
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog h2 {
+            color: #333;
+        }
+
+        .blog p {
+            color: #555;
+        }
+
+        .blog a {
+            display: block; /* Ensure the entire content area is clickable */
+            color: #007BFF; /* Link color */
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Set final opacity to 1 for fully visible content */
+            }
+        }
+        header img {
+            width: 100%;
+            height: 20vh;
+            object-fit: cover; /* Ensure the image covers the entire container while maintaining aspect ratio */
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #5078f2;
+            background-image: linear-gradient(315deg, #5078f2 0%, #efe9f4 74%);
+            color:black;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            
+        }
+        .social-icons img {
+            width: 30px; /* Adjust the size of the icons */
+            height: auto;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color:black
+        }
+
+        .copyright {
+            font-size: 14px;
+        }
+
+        
+      
+    </style>
+</head>
+<body>
+    
+    
+    <header>
+        <h1 style="text-align: center;font-size:30px;">Keto Mastery: Your Ultimate Guide to Effective Ketogenic Diet Plans</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="nutrition main.html">Nutrition</a></li>
+                    <li><a href="workoutplan.html">Workout Tracker</a></li>
+                    <li><a href="mentalhealth.html">Mental health</a></li>
+                </ul>
+            </nav>
+        </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    <main>
+        <br>
+        <br>
+        <h2 style="color:black;">The articles below will help you be successful on your keto plan, learn about nutrition, and gain valuable tips for using GetMovePro.</h2>
+        <div class="blog">
+            <h1 style="color:black;text-align: center;">Getting started</h1>
+            <h2>Getting started on the Keto Diet:</h2>
+            <p style="font-size:20px;"> You’ve done your research and want to get started on a keto diet, but aren’t sure where to begin? Follow these five steps to maximize your success.</p>
+            <img src="leftketo.jpeg" alt="Blog 1 Image">
+            <div class="blog-content"></div>
+            
+            <a href="https://www.mynetdiary.com/get_started_on_keto_diet.html" target="_blank">Read more</a>
+        </div>
+
+            <div class="blog">
+                
+                <div class="blog-content">
+            <h2>Monitoring ketones: how do I know I am in ketosis?</h2>
+            <p style="font-size:  20px;">Thinking about monitoring ketones? You may choose to monitor blood, urine, or breath ketone levels to evaluate response to your keto diet and to provide extra motivation.</p>
+            <img src="rightketo.jpeg" alt="Blog 2 Image">
+            <a href="https://blogsource2.com" target="_blank">Read more</a>
+
+        </div>
+
+        <div class="blog">
+                
+            <div class="blog-content">
+        <h2>These are the top 10 keto foods you should include if you’re on the diet
+        </h2>
+        <p style="font-size:20px;">Whether you are new to keto or a low-carb veteran, finding nutritious keto-friendly foods can take some effort. Here are our top 10 keto foods to include in your rotation.</p>
+        <img src="blog3.jpg" alt="Blog 2 Image">
+        <a href="https://www.mynetdiary.com/top-10-keto-foods.html" target="_blank">Read more</a>
+
+    </div>
+    <div class="blog">
+                
+        <div class="blog-content">
+    <h2>A complete guide on how to create your own workout plan from scratch (no expensive trainer required)
+    </h2>
+    <p style="font-size:20px;">Whether you call it exercise, physical activity, or moving, learn how to create your own workout plan that becomes part of everyday life. Each of us, despite our interests or physical limitations, can learn to enjoy regular physical activity. The secret is discovering activities you like, are willing to make time for, and can perform without pain or injury. Sit less, stand more, and walk more because being sedentary is frankly a health risk. Being active and fit, even with higher body weight, protects and prolongs health.</p>
+    <img src="blog4.jpeg" alt="Blog 2 Image">
+    <a href="https://www.mynetdiary.com/create-your-own-workout-plan.html" target="_blank">Read more</a>
+
+</div>
+
+        <!-- Add more blogs as needed -->
+
+    </main>
+
+    <!-- Save this as footer.html -->
+
+    <footer>
+        <div class="social-icons">
+            <!-- Replace the "#" with your actual social media links -->
+            <a href="#" target="_blank"><img src="linkedin-icon.jpg" alt="LinkedIn"></a>
+            <a href="#" target="_blank"><img src="x-icon.jpg" alt="Twitter"></a>
+            <a href="#" target="_blank"><img src="instagram-icon.jpg" alt="Instagram"></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+
+        <p class="copyright">&copy; 2024 GetMovePro. All rights reserved.</p>
+    </footer>
+
+   
+
+</body>
+</html>

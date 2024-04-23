@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Get Move Pro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif, Georgia;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(69.9deg, rgb(76, 79, 106) 3.2%, rgb(118, 124, 163) 97.6%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header img {
+            max-width: 10%;
+            height: auto;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: linear-gradient(69.9deg, rgb(76, 79, 106) 3.2%, rgb(118, 124, 163) 97.6%);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        a {
+            
+            text-decoration: none;
+        }
+        footer {
+            background: linear-gradient(69.9deg, rgb(76, 79, 106) 3.2%, rgb(118, 124, 163) 97.6%);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            
+        }
+        .social-icons img {
+            width: 30px; /* Adjust the size of the icons */
+            height: auto;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .copyright {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="Get MovePro.png" alt="Get Move Pro Logo">
+    </header>
+
+    <form action="login.php" method="post">
+        <h2>Login to Get Move Pro</h2>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+
+        <p>Don't have an account? <a href="signupfinal.html">Sign up here</a></p>
+    </form>
+    <footer>
+        <div class="social-icons">
+            <!-- Replace the "#" with your actual social media links -->
+            <a href="#" target="_blank"><img src="linkedin-icon.jpg" alt="LinkedIn"></a>
+            <a href="#" target="_blank"><img src="x-icon.jpg" alt="Twitter"></a>
+            <a href="https://www.instagram.com/__preksha.chandrashekar__?igsh=YmpiaXk4azQzbmZw" target="_blank"><img src="instagram-icon.jpg" alt="Instagram"></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+
+        <p class="copyright">&copy; 2024 GetMovePro. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
