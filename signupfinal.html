@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Move Pro Sign-Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif,Georgia;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(69.9deg, rgb(76, 79, 106) 3.2%, rgb(118, 124, 163) 97.6%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header img {
+            max-width: 10%; /* Adjust the max-width as needed */
+            height: auto;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .social-media {
+            margin-top: 10px;
+            font-size: 32px; /* Adjust the font size as needed */
+        }
+
+        .social-media i {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        footer {
+            background: linear-gradient(69.9deg, rgb(76, 79, 106) 3.2%, rgb(118, 124, 163) 97.6%);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            
+        }
+        .social-icons img {
+            width: 30px; /* Adjust the size of the icons */
+            height: auto;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .copyright {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Get MovePro.png" alt="Fitness Tracker Logo">
+    </header>
+
+    <form action="signup.php" method="post">
+        <h2>Sign Up for Fitness Tracker</h2>
+
+        <!-- Basic Details -->
+        <label for="firstName">Full Name - First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Full Name - Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <!-- Personal Information -->
+        <h3>Personal Information</h3>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <!-- Contact Information -->
+        <h3>Contact Information</h3>
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber">
+
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4"></textarea>
+
+        <!-- Fitness Goals -->
+        <h3>Fitness Goals</h3>
+        <label for="fitnessGoal">Fitness Goal:</label>
+        <select id="fitnessGoal" name="fitnessGoal">
+            <option value="weightLoss">Weight Loss</option>
+            <option value="muscleGain">Muscle Gain</option>
+            <option value="maintenance">Maintenance</option>
+        </select>
+
+        <label for="targetWeight">Target Weight:</label>
+        <input type="number" id="targetWeight" name="targetWeight">
+
+        <!-- Fitness Level -->
+        <h3>Fitness Level</h3>
+        <label for="activityLevel">Activity Level:</label>
+        <select id="activityLevel" name="activityLevel">
+            <option value="sedentary">Sedentary</option>
+            <option value="lightlyActive">Lightly Active</option>
+            <option value="moderatelyActive">Moderately Active</option>
+            <option value="veryActive">Very Active</option>
+            <option value="extremelyActive">Extremely Active</option>
+        </select>
+
+        <label for="exercisePreferences">Exercise Preferences:</label>
+        <input type="text" id="exercisePreferences" name="exercisePreferences">
+
+        <!-- Health Information -->
+        <h3>Health Information</h3>
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" name="height" required>
+
+        <label for="medicalConditions">Medical Conditions:</label>
+        <textarea id="medicalConditions" name="medicalConditions" rows="4"></textarea>
+
+        <!-- Terms and Conditions -->
+        <label for="agreeTerms">
+            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+            I agree to the <a href="/terms" target="_blank">Terms and Conditions</a>
+        </label>
+
+        <!-- Captcha/Security Measures -->
+        <!-- Include your captcha implementation here -->
+        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+
+
+        <!-- Social Media Integration -->
+    
+        <div class="social-media">
+            <p>Sign up using:</p>
+            
+            <!-- Google Sign-Up -->
+            <i class="fab fa-google" onclick="location.href='YOUR_GOOGLE_OAUTH_URL'"></i>
+
+            <!-- Instagram Sign-Up -->
+            <i class="fab fa-instagram" onclick="location.href='YOUR_INSTAGRAM_OAUTH_URL'"></i>
+
+            <!-- Facebook Sign-Up -->
+            <i class="fab fa-facebook" onclick="location.href='YOUR_FACEBOOK_OAUTH_URL'"></i>
+
+            <!-- Strava Sign-Up -->
+            <i class="fab fa-strava" onclick="location.href='YOUR_STRAVA_OAUTH_URL'"></i>
+        </div>
+
+        
+
+        <!-- Submit Button -->
+        <br>
+        <br>
+
+        <button type="submit">Sign Up</button>
+    </form>
+    <footer>
+        <div class="social-icons">
+            <!-- Replace the "#" with your actual social media links -->
+            <a href="#" target="_blank"><img src="linkedin-icon.jpg" alt="LinkedIn"></a>
+            <a href="#" target="_blank"><img src="x-icon.jpg" alt="Twitter"></a>
+            <a href="#" target="https://www.instagram.com/roopika_singh?utm_source=qr&igsh=eW83N3E4MGNod2R5"><img src="instagram-icon.jpg" alt="Instagram"></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+
+        <p class="copyright">&copy; 2024 GetMovePro. All rights reserved.</p>
+    </footer>
+</body>
+</html>

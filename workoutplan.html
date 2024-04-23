@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker</title>
+    <style>
+        body {
+            font-family:'Pappins';
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-size:20px;
+        }
+
+        header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at 0.2% 1.8%, rgb(255, 90, 8) 0%, rgb(88, 0, 0) 100.2%);
+    padding:20px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color:whitesmoke;
+    font-weight: bold;
+    font-size:20px;
+}
+
+        #container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            width: 80%; /* Adjusted width for better visibility */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color:rgba(96, 92, 92, 0.868); 
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        ul {
+            text-align: left;
+            margin-top: 10px;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+
+        .benefits {
+            margin-top: 20px;
+        }
+        .workout-suggestions {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .workout-video {
+            margin-top: 10px;
+        }
+
+
+        footer {
+    background: radial-gradient(circle at 0.2% 1.8%, rgb(255, 90, 8) 0%, rgb(88, 0, 0) 100.2%);
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0; /* Add left: 0; to cover the entire width */
+    right: 0; /* Add right: 0; to cover the entire width */
+}
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: auto;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .copyright {
+            font-size: 16px;
+        }
+        
+    </style>
+</head>
+
+<body><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <header>
+       <br>
+        <nav>
+            <h1 style="text-align: center;font-size:35px;color: whitesmoke;">GetMovePro Tracker</h1>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="nutrition main.html">Nutrition</a></li>
+                <li><a href="workoutplan.html">Workout Tracker</a></li>
+                <li><a href="mentalhealth.html">Mental health</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <div id="container">
+        <h1>Workout Tracker</h1>
+
+        <label for="activity">Select Activity:</label>
+        <select id="activity">
+            <option value="walking">Walking</option>
+            <option value="jogging">Jogging</option>
+            <option value="swimming">Swimming</option>
+            <option value="running">Running</option>
+            <option value="hiking">Hiking</option>
+            <!-- Add more activities as needed -->
+        </select>
+
+        <button onclick="addWorkout()">Add Workout</button>
+
+        <h3>Workout History:</h3>
+        <ul id="workout-history"></ul>
+
+        <div class="benefits" id="benefits">
+            <!-- Benefits of selected activity will be displayed here -->
+        </div>
+
+        
+        <h3>Track Workout from Other Apps:</h3>
+        <button class="icon-btn" onclick="trackFromStrava()">
+            <img src="strava-icon.jpg" alt="Strava Icon" width="45px" height="45px"> Track from Strava
+        </button>
+        
+        <button class="icon-btn" onclick="trackFromGoogleFit()">
+            <img src="gfit-icon.jpg" alt="Google Fit Icon" width="45px" height="45px"> Track from Google Fit
+        </button>
+        <br>
+        <br>
+        <div id="container">
+            <h1>Workout Planner</h1>
+    
+            <label for="goal">Select Your Goal:</label>
+            <select id="goal">
+                <option value="muscle-gain">Muscle Gain</option>
+                <option value="weight-loss">Weight Loss</option>
+                <option value="maintenance">Maintenance</option>
+            </select>
+    
+            <button onclick="planWorkout()">Plan My Workout</button>
+    
+            <div class="workout-suggestions" id="workout-suggestions">
+                <!-- Suggested workouts and videos will be displayed here -->
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    <footer>
+        <div class="social-icons">
+            <!-- Replace the "#" with your actual social media links -->
+            <a href="#" target="_blank"><img src="linkedin-icon.jpg" alt="LinkedIn"></a>
+            <a href="#" target="_blank"><img src="x-icon.jpg" alt="Twitter"></a>
+            <a href="#" target="_blank"><img src="instagram-icon.jpg" alt="Instagram"></a>
+            <!-- Add more social media icons as needed -->
+        </div>
+
+        <p class="copyright">&copy; 2024 GetMovePro. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function addWorkout() {
+            const activity = document.getElementById('activity').value;
+            const workoutHistory = document.getElementById('workout-history');
+            const listItem = document.createElement('li');
+            listItem.textContent = activity;
+            workoutHistory.appendChild(listItem);
+
+            displayBenefits(activity);
+        }
+
+        function displayBenefits(activity) {
+            const benefitsDiv = document.getElementById('benefits');
+            let benefitsText = '';
+
+            switch (activity.toLowerCase()) {
+                case 'walking':
+                    benefitsText = 'Benefits of Walking: Improved cardiovascular health, strengthened muscles, and enhanced mood.';
+                    break;
+                case 'jogging':
+                    benefitsText = 'Benefits of Jogging: Increased stamina, calorie burning, and improved cardiovascular fitness.';
+                    break;
+                case 'swimming':
+                    benefitsText = 'Benefits of Swimming: Full-body workout, low impact, and improved flexibility.';
+                    break;
+                case 'running':
+                    benefitsText = 'Benefits of Running: Enhanced cardiovascular health, calorie burning, and stress relief.';
+                    break;
+                case 'hiking':
+                    benefitsText = 'Benefits of Hiking: Strengthens lower body muscles, improves cardiovascular fitness, and reduces stress.';
+                    break;
+                default:
+                    benefitsText = 'No specific benefits available for this activity.';
+                    break;
+            }
+            benefitsDiv.textContent = benefitsText;
+        }
+
+        function trackFromStrava() {
+            alert('Tracking from Strava...'); // Placeholder, actual implementation required
+        }
+
+        function trackFromGoogleFit() {
+            alert('Tracking from Google Fit...'); // Placeholder, actual implementation required
+        }
+        function planWorkout() {
+            const goal = document.getElementById('goal').value;
+            const workoutSuggestions = document.getElementById('workout-suggestions');
+            workoutSuggestions.innerHTML = ''; // Clear previous suggestions
+
+            let suggestionsText = '';
+            let videoEmbedCode = '';
+
+            switch (goal) {
+                case 'muscle-gain':
+                    suggestionsText = 'Suggested Workouts for Muscle Gain:\n1. Bench Press\n2. Squats\n3. Deadlifts';
+                    videoEmbedCode = '<iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/vRKDvt695pg?si=K1UqDZLrvuSKDPOY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                    videoEmbedCode = '<iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/4Y2ZdHCOXok?si=UEZg6MBefCcU14Is" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                    break;
+                case 'weight-loss':
+                    suggestionsText = 'Suggested Workouts for Weight Loss:\n1. High-Intensity Interval Training (HIIT)\n2. Running\n3. Cycling';
+                    videoEmbedCode = '<iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/fxx2Uc0AjFk?si=R_fKlfBRu6jKsduA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                    videoEmbedCode = '<iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/W4eKVKwf3rQ?si=0q1VuT5iyqKki7iW" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                    break;
+                case 'maintenance':
+                    suggestionsText = 'Suggested Workouts for Maintenance:\n1. Walking\n2. Yoga\n3. Swimming';
+                    videoEmbedCode = '<iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/dAqQqmaI9vY?si=MrzrFItGqEIEBLKI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                    videoEmbedCode = '<iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/Eml2xnoLpYE?si=2sNTYM64c8rCZFZ9" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                    break;
+                default:
+                    suggestionsText = 'No specific workouts available for this goal.';
+                    break;
+            }
+
+            const suggestionsParagraph = document.createElement('p');
+            suggestionsParagraph.textContent = suggestionsText;
+            workoutSuggestions.appendChild(suggestionsParagraph);
+
+            if (videoEmbedCode !== '') {
+                const videoContainer = document.createElement('div');
+                videoContainer.className = 'workout-video';
+                videoContainer.innerHTML = videoEmbedCode;
+                workoutSuggestions.appendChild(videoContainer);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+ 
